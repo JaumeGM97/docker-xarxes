@@ -1,9 +1,10 @@
 version: '3'
 
 services:
-  dns-hospitalbinissalem:
+  dns-isitech:
     build:
       context: ..
       dockerfile: dhcp.Dockerfile
-    container_name: dhcp-dck-hospitalbinissalem
+    container_name: dhcp-dck-isitech
+
 
