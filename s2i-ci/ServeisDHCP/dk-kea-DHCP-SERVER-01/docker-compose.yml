@@ -1,7 +1,9 @@
 version: '3'
 
 services:
-  dhcp-hospitalbinissalem:
+  dhcp-isitech:
+    cap_add:
+      -NET_ADMIN
     build:
       context: ..
       dockerfile: dhcp.Dockerfile
@@ -27,5 +29,6 @@ networks:
     ipam:
       config:
         - subnet: 10.18.30.96/27 # subnet for kea4 server
+
 
 
