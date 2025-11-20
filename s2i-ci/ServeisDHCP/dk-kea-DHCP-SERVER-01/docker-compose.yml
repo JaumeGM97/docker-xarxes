@@ -27,7 +27,3 @@ networks:
     ipam:
       config:
         - subnet: 10.18.30.96/27 # subnet for kea4 server
-
-
-
-
