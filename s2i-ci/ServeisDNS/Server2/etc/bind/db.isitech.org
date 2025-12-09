@@ -1,0 +1,32 @@
+$TTL 1M  ; TTL per defecte d'1 minut
+
+@ IN SOA ns01.isitech.org. admin.isitech.org. (
+                2008052001 ; Serial
+                2M         ; Refresh (2 minuts)
+                1M         ; Retry (1 minut)
+                1D         ; Expire (1 dia)
+                1M )       ; Minimum TTL (1 minut)
+
+; Registres NS
+@               IN      NS      ns01.isitech.org.
+@               IN      NS      ns2.isitech.org.
+
+; Registres MX (Prioritat no especificada, s'assumeix la mateixa)
+@               IN      MX 10   mail01.isitech.org.
+@               IN      MX 10   mail02.isitech.org.
+
+; Registres A (Hosts)
+ns01            IN      A       192.168.144.202
+ns2             IN      A       192.168.144.203
+mail01          IN      A       192.168.144.204
+mail02          IN      A       192.168.144.205
+web             IN      A       192.168.144.206
+file            IN      A       192.168.144.207
+
+; Registres CNAME ( ^`lies)
+www             IN      CNAME   web.isitech.org.
+ftp             IN      CNAME   file.isitech.org.
+
+; Delegaci   del subdomini 'estacions'
+estacions       IN      NS      ns01.isitech.org.
+estacions       IN      NS      ns2.isitech.org.
