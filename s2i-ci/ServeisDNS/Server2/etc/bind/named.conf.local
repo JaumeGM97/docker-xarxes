@@ -4,7 +4,7 @@
 zone "isitech.org" {
     type master;
     file "/etc/bind/db.isitech.org";
-    allow-transfer { 192.168.144.203; }; // Permet la transfer  ncia al DNS Secundari (ns2)
+    allow-transfer { 192.168.144.203; }; // Permet la transfer  ncia al DNS Secunda>
 };
 
 // Zona Delegada (Subdomini) - El teu "segon nom de domini"
@@ -20,4 +20,3 @@ zone "30.18.10.in-addr.arpa" {
     type master;
     file "/etc/bind/db.10.18.30";
     allow-transfer { 192.168.144.203; };
-};
