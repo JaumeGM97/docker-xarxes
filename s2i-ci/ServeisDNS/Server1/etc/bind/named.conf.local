@@ -1,12 +1,19 @@
-//
-// Do any local configuration here
-//
+include "/etc/bind/keys/dhcp.key";
 
-// Consider adding the 1918 zones here, if they are not used in your
-// organization
-//include "/etc/bind/zones.rfc1918";
-
-zone "hospitalbinissalem.com" {
+zone "isitech.com" {
     type master;
-    file "/etc/bind/db.hospitalbinissalem.com";
+    file "/etc/bind/Isitech.com";
+    allow-update { key dhcpupdate; };
+};
+
+zone "estacions.intranet.com" {
+    type master;
+    file "/etc/bind/estacions.intranet.com";
+    allow-transfer { 192.168.144.196; };
+};
+
+zone "30.18.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/30.18.10.in-addr.arpa";
+    allow-update { key dhcpupdate; };
 };
