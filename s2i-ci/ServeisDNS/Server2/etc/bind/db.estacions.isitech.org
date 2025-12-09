@@ -1,0 +1,19 @@
+$TTL 1M  ; TTL per defecte d'1 minut
+
+@ IN SOA ns01.isitech.org. admin.isitech.org. (
+                2008052001 ; Serial
+                2M         ; Refresh (2 minuts)
+                1M         ; Retry (1 minut)
+                1D         ; Expire (1 dia)
+                1M )       ; Minimum TTL (1 minut)
+
+; Registres NS
+@               IN      NS      ns01.isitech.org.
+@               IN      NS      ns2.isitech.org.
+
+; Registres A (Estacions)
+est01           IN      A       10.18.30.168
+est02           IN      A       10.18.30.169
+est03           IN      A       10.18.30.170
+est04           IN      A       10.18.30.171
+est05           IN      A       10.18.30.172
