@@ -1,12 +1,23 @@
-//
-// Do any local configuration here
-//
+// /etc/bind/named.conf.local
 
-// Consider adding the 1918 zones here, if they are not used in your
-// organization
-//include "/etc/bind/zones.rfc1918";
-
-zone "quirofans.com" {
+// Zona Principal
+zone "isitech.org" {
     type master;
-    file "/etc/bind/db.quirofans.com";
+    file "/etc/bind/db.isitech.org";
+    allow-transfer { 192.168.144.203; }; // Permet la transfer  ncia al DNS Secundari (ns2)
+};
+
+// Zona Delegada (Subdomini) - El teu "segon nom de domini"
+zone "estacions.isitech.org" {
+    type master;
+    file "/etc/bind/db.estacions.isitech.org";
+    allow-transfer { 192.168.144.203; };
+};
+
+// Zona Inversa per a la xarxa 10.18.30.0/24
+// Nom de la zona: 30.18.10.in-addr.arpa
+zone "30.18.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.10.18.30";
+    allow-transfer { 192.168.144.203; };
 };
